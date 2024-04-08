@@ -1,0 +1,27 @@
+@use '../custom' as *; //Importamos el _custom.scss
+@use 'utils/mixins' as m; //Importamos el _mixins.scss
+
+.heading-testimonial {
+    @include m.headingBorder($secondary, $primary);
+}
+
+.testimonial {
+    border: .5rem solid $secondary;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    padding: 2rem 2rem 2rem 6rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 5rem;
+        height: 5rem;
+        display: block;
+        background-image: url(../img/comilla.svg);
+        background-size: 4rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        left: .5rem;
+    }
+}

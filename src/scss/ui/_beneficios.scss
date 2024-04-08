@@ -1,0 +1,17 @@
+@use '../custom' as *; //Importamos el _custom.scss
+@use 'utils/mixins' as m; //Importamos el _mixins.scss
+
+.beneficios {
+    h2 {
+        @include m.headingBorder($secondary, $white);
+    }
+    .imagen {
+        @include media-breakpoint-up(md) {
+            //tipo de transicion, duracion, tipo de animacion
+            @include transition(transform 300ms ease);
+            &:hover {
+                transform: rotate(8deg) scale(1.1);
+            }
+        }
+    }
+}

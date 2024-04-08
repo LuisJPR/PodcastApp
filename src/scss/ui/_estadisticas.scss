@@ -1,0 +1,8 @@
+@use '../custom' as *; //Importamos el _custom.scss
+@use 'utils/mixins' as m; //Importamos el _mixins.scss
+
+.estadisticas {
+    h2 {
+        @include m.headingBorder($secondary, $primary);
+    }
+}

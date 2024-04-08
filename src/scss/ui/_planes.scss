@@ -1,0 +1,50 @@
+@use '../custom' as *; //Importamos el _custom.scss
+@use 'utils/mixins' as m; //Importamos el _mixins.scss
+
+$separacion: 5rem;
+
+.planes {
+    h2 {
+        @include m.headingBorder($white, $primary);
+    }
+}
+
+.plan {
+    padding: 16rem 4rem 4rem 4rem;
+    border-bottom: 1px solid #e1e1e1;
+
+    @include media-breakpoint-up(md) {
+        border: none;
+        @include transition(transform 300ms ease);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .precio {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &.inicio {
+        @include m.bgIcono('../img/icono_inicio.svg');
+    }
+
+    &.negocio { //plan y negocio estan en el mismo nivel!!!
+        @include m.bgIcono('../img/icono_negocio.svg');
+        @include media-breakpoint-up(md) {
+            margin-top: -#{$separacion};
+            margin-bottom: -#{$separacion};
+            border-radius: 2rem;
+            z-index: 100;
+            padding-top: calc(16rem + #{$separacion});
+            background-position-y: calc(2rem + #{$separacion});
+        }
+    }
+
+    &.pro {
+        @include m.bgIcono('../img/icono_pro.svg');
+    }
+}
